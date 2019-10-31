@@ -1,0 +1,13 @@
+apiVersion: kvmcrd.k8s.io/v1
+kind: KVM
+metadata:
+  name: example-kvm
+  labels:
+    k8s-app: test-kvm
+spec:
+  processes:
+  - name: bash
+    command: /bin/bash
+    args:
+    - -c "while [ 1 ];do sleep 3 && echo running...;done"
+
